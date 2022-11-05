@@ -57,11 +57,13 @@
 			class="grid relative gap-2 bg-slate-200 w-full min-h-[200px] rounded-md shadow-lg shadow-slate-900 p-6 pr-4 text-slate-800"
 		>
 			<div v-if="activeTask !== null">
-				<h3
-					class="text-2xl font-black bg-gradient-to-r gradient from-blue-600 to-purple-700 bg-clip-text text-transparent"
-				>
-					{{ tasks[activeTask].title }}
-				</h3>
+				<div>
+					<h3
+						class="inline text-2xl font-black bg-gradient-to-r gradient from-blue-600 to-purple-700 bg-clip-text text-transparent"
+					>
+						{{ tasks[activeTask].title }}
+					</h3>
+				</div>
 				<p class="text-gray-500">
 					{{ tasks[activeTask].description }}
 				</p>
