@@ -1,38 +1,3 @@
-<script setup>
-import { ref } from 'vue';
-
-const showFullWeek = ref(false);
-
-const weekDays = [
-	'Niedziela',
-	'Poniedziałek',
-	'Wtorek',
-	'Środa',
-	'Czwartek',
-	'Piątek',
-	'Sobota'
-];
-
-const sortArrayToStartFromIndex = (array, startIndex) => {
-	let sortedArray = [];
-	let i = startIndex;
-	while (i < array.length) {
-		sortedArray.push(array[i]);
-		i++;
-	}
-	i = startIndex - 1;
-	while (i < array.length && i >= 0) {
-		sortedArray.push(array[i]);
-		i--;
-	}
-	return sortedArray;
-};
-
-const today = new Date().getDay();
-
-const weekDaysFromToday = sortArrayToStartFromIndex(weekDays, today);
-</script>
-
 <template>
 	<div class="grid p-6">
 		<div
@@ -86,4 +51,46 @@ const weekDaysFromToday = sortArrayToStartFromIndex(weekDays, today);
 	</div>
 </template>
 
-<style></style>
+<script>
+export default {
+	name: 'TasksApp',
+	data() {
+		return {
+			showFullWeek: false,
+			weekDays: [
+				'Niedziela',
+				'Poniedziałek',
+				'Wtorek',
+				'Środa',
+				'Czwartek',
+				'Piątek',
+				'Sobota'
+			]
+		};
+	},
+	methods: {
+		sortArrayToStartFromIndex(array, startIndex) {
+			let sortedArray = [];
+			let i = startIndex;
+			while (i < array.length) {
+				sortedArray.push(array[i]);
+				i++;
+			}
+			i = startIndex - 1;
+			while (i < array.length && i >= 0) {
+				sortedArray.push(array[i]);
+				i--;
+			}
+			return sortedArray;
+		}
+	},
+	computed: {
+		today() {
+			return new Date().getDay();
+		},
+		weekDaysFromToday() {
+			return this.sortArrayToStartFromIndex(this.weekDays, this.today);
+		}
+	}
+};
+</script>
