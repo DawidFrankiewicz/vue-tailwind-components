@@ -1,11 +1,21 @@
-# Vue 3 + Vite
+# General
 
-This template should help get you started developing with Vue 3 in Vite. The
-template uses Vue 3 `<script setup>` SFCs, check out the
-[script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup)
-to learn more.
+## Versions
 
-## Recommended IDE Setup
+-   Node v19.0.0
+-   NPM 8.19.2
 
--   [VS Code](https://code.visualstudio.com/) +
-    [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+## Stack
+
+-   Vue 3
+-   Vite
+-   Tailwind CSS
+-   Eslint + Prettier
+
+## Getting started
+
+In terminal to start app in development mode <br>`npm run dev`
+
+## Code styling
+
+In terminal to run prettier styling to format code <br>`npx prettier --write .`
