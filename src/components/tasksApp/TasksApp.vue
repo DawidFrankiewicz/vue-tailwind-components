@@ -5,7 +5,11 @@
 			:tasks="tasks"
 			@change-active-task="(taskId) => changeActiveTask(taskId)"
 		/>
-		<TaskDisplay :tasks="tasks" :activeTask="activeTask" />
+		<TaskDisplay
+			:tasks="tasks"
+			:activeTask="activeTask"
+			:weekDays="weekDays"
+		/>
 	</div>
 </template>
 
