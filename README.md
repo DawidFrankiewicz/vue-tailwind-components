@@ -14,7 +14,8 @@
 
 ## Getting started
 
-In terminal to start app in development mode <br>`npm run dev`
+Install dependencies <br>`npm install`<br> In terminal to start app in
+development mode <br>`npm run dev`
 
 ## Code styling
 
