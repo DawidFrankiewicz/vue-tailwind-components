@@ -7,10 +7,11 @@
 
 ## Stack
 
--   Vue 3
--   Vite
--   Tailwind CSS
--   Eslint + Prettier
+- Vue 3
+  - Vuex
+- Vite
+- Tailwind CSS
+- Eslint + Prettier
 
 ## Getting started
 
