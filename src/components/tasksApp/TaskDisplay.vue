@@ -5,13 +5,11 @@
 		<div v-if="activeTask !== null">
 			<div class="flex items-center">
 				<h3
-					class="inline text-2xl font-black bg-gradient-to-r gradient from-blue-600 to-purple-700 bg-clip-text text-transparent"
+					class="inline text-2xl pr-4 border-r-2 border-slate-400 font-black bg-gradient-to-r gradient from-blue-600 to-purple-700 bg-clip-text text-transparent"
 				>
 					{{ tasks[activeTask].title }}
 				</h3>
-				<p
-					class="inline border-l-2 border-slate-400 text-slate-400 pl-2 ml-4 font-bold uppercase"
-				>
+				<p class="inline text-slate-400 ml-4 font-bold uppercase">
 					{{ weekDays[tasks[activeTask].weekDayId].name }}
 				</p>
 			</div>
@@ -20,9 +18,9 @@
 			</p>
 		</div>
 		<div v-else>
-			<h2 class="text-2xl font-bold text-gray-500">
+			<h3 class="text-2xl font-bold text-gray-500">
 				Wybierz zadanie aby zobaczyć szczegóły
-			</h2>
+			</h3>
 			<font-awesome-icon
 				icon="fa-solid fa-calendar-day"
 				size="5x"
