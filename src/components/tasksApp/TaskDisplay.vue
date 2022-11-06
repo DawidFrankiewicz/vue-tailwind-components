@@ -36,6 +36,16 @@
 <script>
 export default {
 	name: 'TaskDisplay',
-	props: ['tasks', 'activeTask', 'weekDays']
+	computed: {
+		activeTask() {
+			return this.$store.state.activeTask;
+		},
+		weekDays() {
+			return this.$store.state.weekDays;
+		},
+		tasks() {
+			return this.$store.state.tasks;
+		}
+	}
 };
 </script>

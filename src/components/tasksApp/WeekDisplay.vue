@@ -25,8 +25,11 @@
 				<div
 					v-for="task in allTasksForWeekDay(weekDay.id)"
 					:key="task.id"
-					@click="$emit('changeActiveTask', task.id)"
+					@click="this.$store.commit('setActiveTask', task.id)"
 					class="border-t-2 p-2 py-1 border-emerald-900 border-opacity-30 first:border-0 hover:bg-emerald-100 transition-colors last:mb-3"
+					:class="{
+						'bg-emerald-200': task.id === activeTask
+					}"
 				>
 					<h4 class="text-sm text-gray-500">
 						{{ task.title }}
@@ -58,25 +61,47 @@
 <script>
 export default {
 	name: 'WeekDisplay',
-	props: {
-		weekDaysFromToday: {
-			type: Array,
-			required: true
-		},
-		tasks: {
-			type: Array,
-			required: true
-		}
-	},
 	data() {
 		return {
 			showFullWeek: false
 		};
 	},
+	computed: {
+		activeTask() {
+			return this.$store.state.activeTask;
+		},
+		weekDays() {
+			return this.$store.state.weekDays;
+		},
+		tasks() {
+			return this.$store.state.tasks;
+		},
+		today() {
+			return new Date().getDay();
+		},
+		weekDaysFromToday() {
+			return this.sortArrayToStartFromIndex(this.weekDays, this.today);
+		}
+	},
 	methods: {
 		// Get all tasks for specific week day
 		allTasksForWeekDay(weekDayId) {
 			return this.tasks.filter((task) => task.weekDayId === weekDayId);
+		},
+		// Sort array to start from specific index - example (arr, 4) [1,2,3,4,5,6,7] -> [5,6,7,1,2,3,4]
+		sortArrayToStartFromIndex(array, startIndex) {
+			let sortedArray = [];
+			let i = startIndex;
+			while (i < array.length) {
+				sortedArray.push(array[i]);
+				i++;
+			}
+			i = 0;
+			while (i < startIndex && i >= 0) {
+				sortedArray.push(array[i]);
+				i++;
+			}
+			return sortedArray;
 		}
 	}
 };
