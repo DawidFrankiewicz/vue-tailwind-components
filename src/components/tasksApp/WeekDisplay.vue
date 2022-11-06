@@ -11,10 +11,12 @@
 			<div class="p-2">
 				<h3
 					:class="{
+						'from-blue-600 to-purple-700':
+							weekDay.id !== 6 && weekDay.id !== 0,
 						'from-orange-400 to-red-600': weekDay.id === 0,
 						'from-fuchsia-400 to-orange-400': weekDay.id === 6
 					}"
-					class="inline text-2xl font-black bg-gradient-to-r gradient from-blue-600 to-purple-700 bg-clip-text text-transparent"
+					class="inline text-2xl font-black bg-gradient-to-r gradient bg-clip-text text-transparent"
 				>
 					{{ weekDay.name }}
 				</h3>
