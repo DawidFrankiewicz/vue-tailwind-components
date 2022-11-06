@@ -14,9 +14,10 @@
 
 ## Getting started
 
-Install dependencies <br>`npm install`<br> In terminal to start app in
-development mode <br>`npm run dev`
+Install dependencies <br>`npm install`<br> Development mode <br>`npm run dev`
 
 ## Code styling
 
-In terminal to run prettier styling to format code <br>`npx prettier --write .`
+### TODO: Better eslint and prettier config
+
+Run prettier styling to format code <br>`npx prettier --write .`
